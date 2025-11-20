@@ -8,3 +8,12 @@ image = "0.25.6"
 tempfile = "3.20.0"
 rand = "0.9.1"
 serde = {version = "1.0.219", features = ["derive"]}
+
+
+[lib]
+name = "video_derivative"
+path = "src/lib.rs"
+
+[[bin]]
+name = "video_deivative_cli"
+path = "src/main.rs"
