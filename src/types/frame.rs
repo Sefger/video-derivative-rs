@@ -1,8 +1,8 @@
 use std::process::Output;
 use image::{ImageBuffer, Rgb, RgbImage};
-use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+
+#[derive(Debug, Clone)]
 pub struct VideoFrame{
     pub data: RgbImage,
     pub timestamp:f64,
@@ -25,7 +25,7 @@ impl VideoFrame{
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub struct ProcessingConfig{
     pub threshold:u8,
     pub fps: u32,
