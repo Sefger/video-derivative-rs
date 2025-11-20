@@ -43,9 +43,9 @@ impl FrameGenerator{
 
             //some go object
             let obj1_x = (i as u32 *5)% (self.width-50);
-            let obj1_y = 50+(15*(i as f32*0.1).sin()).abs() as u32;
+            let obj1_y = 50+(15.0*(i as f32*0.1).sin()).abs() as u32;
 
-            self.add_recangle(&mut frame, obj1_x, obj1_y, 50, 50, [255, 0, 0]);
+            self.add_rectangle(&mut frame, obj1_x, obj1_y, 50, 50, [255, 0, 0]);
 
             let obj2_x = (self.width - 60).saturating_sub((i as u32 *3)%(self.width-60));
             let obj2_y = 150+(10.0 * (i as f32 * 0.2).cos()).abs() as u32;
@@ -105,7 +105,7 @@ impl FrameGenerator{
         }
 
     }
-    fn random_noise(&self, frame:&mut RgbImage, num_pixels:u32){
+    fn add_random_noise(&self, frame:&mut RgbImage, num_pixels:u32){
         let mut rng = rand::thread_rng();
         for _ in 0..num_pixels{
             let x = rng.gen_range(0..self.width);

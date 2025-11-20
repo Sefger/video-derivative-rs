@@ -3,7 +3,7 @@ use image::{ImageBuffer, Rgb, RgbImage};
 use std::path::Path;
 use std::process::{Command, Output, Stdio};
 use std::fs;
-use image::codecs::png::CompressionType::Default;
+use std::default::Default;
 use tempfile::TempDir;
 
 
@@ -13,7 +13,7 @@ pub struct VideoProcessor {
 
 impl VideoProcessor {
     pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        let temp_dir = TempDir::mew()?;
+        let temp_dir = TempDir::new()?;
         Ok(Self { temp_dir })
     }
 
