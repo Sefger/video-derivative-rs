@@ -1,4 +1,4 @@
-use image::{ImageBuffer, Rgb, RgbImage};
+use image::{RgbImage};
 
 #[derive(Debug, Clone)]
 pub struct VideoFrame {

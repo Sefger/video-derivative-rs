@@ -6,7 +6,6 @@ fn main() {
 
     let args: Vec<String> = env::args().collect();
 
-    // Проверяем, что передан путь к видео
     if args.len() != 2 {
         eprintln!("Использование: {} <путь_к_видео>", args[0]);
         eprintln!("Пример: {} video.mov", args[0]);
@@ -15,7 +14,7 @@ fn main() {
 
     let video_path = &args[1];
 
-    // Обрабатываем видео
+
     if let Err(e) = process_video(video_path) {
         eprintln!("Ошибка обработки видео: {}", e);
         process::exit(1);
@@ -25,12 +24,12 @@ fn main() {
 fn process_video(video_path: &str) -> Result<(), Box<dyn std::error::Error>> {
     println!("Обработка видео: {}", video_path);
 
-    // Проверяем существование файла
+
     if !std::path::Path::new(video_path).exists() {
         return Err(format!("Файл не найден: {}", video_path).into());
     }
 
-    // Создаем видео процессор
+
     let video_processor = VideoProcessor::new()?;
 
     // Проверяем доступность FFmpeg
